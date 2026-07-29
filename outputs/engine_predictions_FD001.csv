@@ -1,0 +1,101 @@
+subset,engine_id,last_cycle,actual_RUL,bilstm_predicted_RUL,gru_attention_predicted_RUL,xgboost_predicted_RUL,ensemble_predicted_RUL,absolute_error,maintenance_priority,suggested_action,suggested_schedule_window
+FD001,1,31,112.0,118.799,113.011,112.454,114.755,2.755,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,2,49,98.0,123.2,119.009,116.011,119.407,21.407,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,3,126,69.0,45.583,37.831,71.307,51.574,17.426,medium,Add to upcoming maintenance plan and continue monitoring.,51-90 cycles
+FD001,4,106,82.0,86.298,86.461,88.602,87.12,5.12,medium,Add to upcoming maintenance plan and continue monitoring.,51-90 cycles
+FD001,5,98,91.0,101.951,110.007,108.015,106.657,15.657,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,6,105,93.0,117.973,114.038,91.41,107.807,14.807,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,7,160,91.0,114.133,97.697,101.314,104.382,13.382,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,8,166,95.0,76.461,106.135,93.272,91.956,3.044,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,9,55,111.0,121.755,121.863,96.621,113.413,2.413,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,10,192,96.0,95.479,73.764,103.01,90.751,5.249,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,11,83,97.0,66.428,62.738,69.594,66.253,30.747,medium,Add to upcoming maintenance plan and continue monitoring.,51-90 cycles
+FD001,12,217,124.0,109.583,91.995,87.912,96.497,27.503,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,13,195,95.0,73.853,73.232,94.752,80.612,14.388,medium,Add to upcoming maintenance plan and continue monitoring.,51-90 cycles
+FD001,14,46,107.0,112.153,107.8,106.829,108.927,1.927,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,15,76,83.0,113.497,106.647,114.006,111.383,28.383,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,16,113,84.0,89.08,108.191,107.703,101.658,17.658,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,17,165,50.0,52.882,52.507,47.546,50.978,0.978,medium,Add to upcoming maintenance plan and continue monitoring.,51-90 cycles
+FD001,18,133,28.0,30.464,30.875,64.539,41.959,13.959,high,Plan maintenance soon and monitor engine condition closely.,21-50 cycles
+FD001,19,135,87.0,111.177,96.318,105.875,104.457,17.457,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,20,184,16.0,16.886,13.652,26.041,18.86,2.86,critical,Inspect immediately and schedule maintenance before next operating window.,0-20 cycles
+FD001,21,148,57.0,65.486,66.771,63.225,65.161,8.161,medium,Add to upcoming maintenance plan and continue monitoring.,51-90 cycles
+FD001,22,39,111.0,121.296,123.189,109.036,117.84,6.84,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,23,130,113.0,120.671,119.952,117.696,119.44,6.44,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,24,186,20.0,20.061,23.39,21.583,21.678,1.678,high,Plan maintenance soon and monitor engine condition closely.,21-50 cycles
+FD001,25,48,125.0,114.388,115.481,115.151,115.007,9.993,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,26,76,119.0,118.943,116.417,108.144,114.501,4.499,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,27,140,66.0,92.248,91.401,111.436,98.361,32.361,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,28,158,97.0,114.179,115.572,94.75,108.167,11.167,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,29,171,90.0,118.033,103.115,100.438,107.195,17.195,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,30,143,115.0,92.254,101.899,94.987,96.38,18.62,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,31,196,8.0,9.503,11.65,20.374,13.842,5.842,critical,Inspect immediately and schedule maintenance before next operating window.,0-20 cycles
+FD001,32,145,48.0,53.716,54.175,48.626,52.172,4.172,medium,Add to upcoming maintenance plan and continue monitoring.,51-90 cycles
+FD001,33,50,106.0,117.635,116.386,90.826,108.283,2.283,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,34,203,7.0,5.889,3.618,7.101,5.536,1.464,critical,Inspect immediately and schedule maintenance before next operating window.,0-20 cycles
+FD001,35,198,11.0,6.285,12.574,6.83,8.563,2.437,critical,Inspect immediately and schedule maintenance before next operating window.,0-20 cycles
+FD001,36,126,19.0,21.087,23.477,23.241,22.601,3.601,high,Plan maintenance soon and monitor engine condition closely.,21-50 cycles
+FD001,37,121,21.0,23.715,26.928,54.825,35.156,14.156,high,Plan maintenance soon and monitor engine condition closely.,21-50 cycles
+FD001,38,125,50.0,61.977,53.949,46.199,54.042,4.042,medium,Add to upcoming maintenance plan and continue monitoring.,51-90 cycles
+FD001,39,37,125.0,123.989,124.54,114.292,120.94,4.06,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,40,133,28.0,34.482,33.908,26.81,31.733,3.733,high,Plan maintenance soon and monitor engine condition closely.,21-50 cycles
+FD001,41,123,18.0,21.949,21.423,63.804,35.725,17.725,high,Plan maintenance soon and monitor engine condition closely.,21-50 cycles
+FD001,42,156,10.0,9.776,9.853,19.372,13.0,3.0,critical,Inspect immediately and schedule maintenance before next operating window.,0-20 cycles
+FD001,43,172,59.0,54.82,55.51,64.327,58.219,0.781,medium,Add to upcoming maintenance plan and continue monitoring.,51-90 cycles
+FD001,44,54,109.0,99.779,97.209,104.93,100.64,8.36,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,45,152,114.0,77.763,67.678,74.374,73.272,40.728,medium,Add to upcoming maintenance plan and continue monitoring.,51-90 cycles
+FD001,46,146,47.0,48.118,52.817,50.856,50.597,3.597,medium,Add to upcoming maintenance plan and continue monitoring.,51-90 cycles
+FD001,47,73,125.0,112.669,102.555,108.678,107.968,17.032,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,48,78,92.0,92.59,118.063,99.54,103.398,11.398,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,49,303,21.0,18.324,18.581,10.494,15.8,5.2,critical,Inspect immediately and schedule maintenance before next operating window.,0-20 cycles
+FD001,50,74,79.0,103.467,111.016,109.272,107.918,28.918,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,51,144,114.0,97.458,99.83,109.397,102.228,11.772,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,52,189,29.0,33.498,36.074,27.654,32.409,3.409,high,Plan maintenance soon and monitor engine condition closely.,21-50 cycles
+FD001,53,164,26.0,34.667,34.236,31.094,33.332,7.332,high,Plan maintenance soon and monitor engine condition closely.,21-50 cycles
+FD001,54,121,97.0,119.577,120.578,120.237,120.131,23.131,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,55,113,125.0,121.147,113.123,109.906,114.725,10.275,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,56,136,15.0,14.026,17.284,14.483,15.265,0.265,critical,Inspect immediately and schedule maintenance before next operating window.,0-20 cycles
+FD001,57,160,103.0,109.757,108.595,97.597,105.316,2.316,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,58,176,37.0,40.494,28.977,48.102,39.191,2.191,high,Plan maintenance soon and monitor engine condition closely.,21-50 cycles
+FD001,59,94,114.0,115.623,111.702,119.571,115.632,1.632,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,60,147,100.0,118.937,108.628,101.638,109.734,9.734,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,61,159,21.0,25.998,25.505,43.499,31.667,10.667,high,Plan maintenance soon and monitor engine condition closely.,21-50 cycles
+FD001,62,232,54.0,47.83,46.337,50.566,48.244,5.756,high,Plan maintenance soon and monitor engine condition closely.,21-50 cycles
+FD001,63,155,72.0,68.043,80.054,66.382,71.493,0.507,medium,Add to upcoming maintenance plan and continue monitoring.,51-90 cycles
+FD001,64,168,28.0,27.659,20.353,51.183,33.065,5.065,high,Plan maintenance soon and monitor engine condition closely.,21-50 cycles
+FD001,65,71,125.0,124.232,122.876,121.839,122.982,2.018,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,66,147,14.0,18.109,19.457,14.368,17.311,3.311,critical,Inspect immediately and schedule maintenance before next operating window.,0-20 cycles
+FD001,67,71,77.0,123.676,121.155,108.495,117.775,40.775,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,68,187,8.0,9.436,11.47,16.498,12.468,4.468,critical,Inspect immediately and schedule maintenance before next operating window.,0-20 cycles
+FD001,69,54,121.0,123.243,121.388,112.341,118.991,2.009,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,70,152,94.0,99.32,106.724,102.702,102.915,8.915,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,71,68,118.0,118.769,114.074,107.329,113.39,4.61,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,72,131,50.0,60.218,67.176,74.549,67.314,17.314,medium,Add to upcoming maintenance plan and continue monitoring.,51-90 cycles
+FD001,73,112,125.0,111.126,108.185,104.839,108.05,16.95,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,74,137,125.0,110.829,109.248,100.373,106.817,18.183,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,75,88,113.0,119.463,106.212,116.533,114.069,1.069,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,76,205,10.0,9.054,11.988,13.481,11.508,1.508,critical,Inspect immediately and schedule maintenance before next operating window.,0-20 cycles
+FD001,77,162,34.0,21.376,22.538,30.248,24.721,9.279,high,Plan maintenance soon and monitor engine condition closely.,21-50 cycles
+FD001,78,72,107.0,124.443,127.244,125.512,125.733,18.733,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,79,101,63.0,95.97,106.854,113.418,105.414,42.414,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,80,133,90.0,96.733,109.325,80.689,95.582,5.582,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,81,213,8.0,5.394,8.483,7.211,7.029,0.971,critical,Inspect immediately and schedule maintenance before next operating window.,0-20 cycles
+FD001,82,162,9.0,8.995,4.939,8.511,7.482,1.518,critical,Inspect immediately and schedule maintenance before next operating window.,0-20 cycles
+FD001,83,73,125.0,123.875,126.919,105.161,118.651,6.349,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,84,172,58.0,60.634,55.014,49.772,55.14,2.86,medium,Add to upcoming maintenance plan and continue monitoring.,51-90 cycles
+FD001,85,34,118.0,123.201,126.964,113.26,121.142,3.142,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,86,110,89.0,109.969,115.134,82.178,102.427,13.427,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,87,56,116.0,120.457,120.107,112.894,117.82,1.82,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,88,68,115.0,118.411,110.964,116.779,115.385,0.385,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,89,177,125.0,116.013,118.472,104.04,112.842,12.158,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,90,146,28.0,37.209,22.632,37.709,32.517,4.517,high,Plan maintenance soon and monitor engine condition closely.,21-50 cycles
+FD001,91,234,38.0,22.67,26.89,26.155,25.238,12.762,high,Plan maintenance soon and monitor engine condition closely.,21-50 cycles
+FD001,92,150,20.0,20.227,19.97,23.373,21.19,1.19,high,Plan maintenance soon and monitor engine condition closely.,21-50 cycles
+FD001,93,244,85.0,55.492,50.369,46.244,50.702,34.298,medium,Add to upcoming maintenance plan and continue monitoring.,51-90 cycles
+FD001,94,133,55.0,62.65,61.629,53.502,59.26,4.26,medium,Add to upcoming maintenance plan and continue monitoring.,51-90 cycles
+FD001,95,89,125.0,116.336,104.78,112.89,111.335,13.665,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,96,97,125.0,120.058,115.249,120.686,118.665,6.335,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,97,134,82.0,82.255,91.942,82.461,85.553,3.553,medium,Add to upcoming maintenance plan and continue monitoring.,51-90 cycles
+FD001,98,121,59.0,61.698,53.716,84.476,66.63,7.63,medium,Add to upcoming maintenance plan and continue monitoring.,51-90 cycles
+FD001,99,97,117.0,124.309,121.962,120.838,122.37,5.37,low,No immediate maintenance action required; keep routine monitoring.,90+ cycles
+FD001,100,198,20.0,18.806,20.781,15.851,18.479,1.521,critical,Inspect immediately and schedule maintenance before next operating window.,0-20 cycles

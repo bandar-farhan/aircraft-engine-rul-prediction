@@ -1,0 +1,4 @@
+Subset,Model,MAE_mean,MAE_std,RMSE_mean,RMSE_std
+FD002,Ensemble(avg),14.23,1.43,18.86,1.84
+FD003,GRU+Attention,8.89,1.01,13.36,1.34
+FD004,XGBoost,12.94,0.63,18.38,1.33
