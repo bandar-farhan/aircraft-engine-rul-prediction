@@ -1,78 +1,100 @@
+
 # Aircraft Engine Remaining Useful Life Prediction
 
-A predictive maintenance system for estimating the **Remaining Useful Life (RUL)** of aircraft turbofan engines using the NASA **C-MAPSS FD001–FD004** datasets.
+**Predictive Maintenance | Machine Learning | Deep Learning | Interactive Dashboard**
 
-The project applies machine learning and deep learning models to predict the remaining operating cycles of aircraft engines and support maintenance planning through an interactive web dashboard.
+An academic predictive-maintenance project that estimates the **Remaining Useful Life (RUL)** of turbofan engines using the NASA **C-MAPSS FD001–FD004** datasets.
+
+The project combines machine learning and deep learning models with an interactive web dashboard for engine health analysis, RUL prediction, maintenance prioritization, and AI-assisted insights.
+
+> **Research demonstration:** This project uses historical simulation data, not live aircraft telemetry. Maintenance recommendations are illustrative and are not certified aviation maintenance instructions.
+
+---
+
+## Project Preview
+
+### 1. Engine Health Dashboard
+
+Interactive dashboard displaying fleet health, critical engines, predicted RUL, and recommended maintenance actions.
+
+![Engine Health Dashboard](screenshots/engine-health-dashboard.png)
+
+### 2. Maintenance Planning
+
+Maintenance recommendations organized by urgency and predicted remaining operating cycles across FD001–FD004.
+
+![Maintenance Plan](screenshots/maintenance-plan.png)
+
+### 3. AI Maintenance Assistant
+
+An AI-powered assistant that helps users identify high-priority engines, understand fleet health, and review maintenance recommendations.
+
+![AI Assistant Demo](screenshots/ai-assistant-demo.png)
 
 ---
 
 ## Project Overview
 
-Aircraft engines generate large amounts of operational sensor data. Predicting when an engine may require maintenance can help reduce unexpected failures, improve safety, and optimize maintenance schedules.
+Aircraft engines generate operational sensor data that can be analyzed to estimate degradation and remaining useful life.
 
-This project processes NASA C-MAPSS turbofan engine degradation data and compares multiple prediction models:
+This project uses the NASA C-MAPSS benchmark to develop and evaluate predictive maintenance models.
 
-- Bidirectional Long Short-Term Memory (**BiLSTM**)
-- Gated Recurrent Unit with Attention (**GRU + Attention**)
-- Extreme Gradient Boosting (**XGBoost**)
-- Ensemble prediction
+The solution covers:
 
-The system also includes a web dashboard that displays engine health, predicted RUL, maintenance priorities, recommended actions, and maintenance schedules.
+- Data preprocessing and feature scaling
+- Time-series sequence generation
+- Machine learning and deep learning
+- Model evaluation and comparison
+- Engine-level RUL predictions
+- Maintenance priority classification
+- Interactive dashboard visualization
+- AI-assisted analysis
 
----
+## Machine Learning Models
 
-## Main Features
+Four prediction approaches are implemented and compared.
 
-- Supports NASA C-MAPSS subsets **FD001, FD002, FD003, and FD004**
-- Calculates Remaining Useful Life labels
-- Applies feature scaling and time-series sequence generation
-- Uses engine-based data splitting
-- Uses Group K-Fold cross-validation
-- Trains BiLSTM models
-- Trains GRU models with an attention mechanism
-- Trains XGBoost models
-- Generates ensemble predictions
-- Evaluates models using MAE and RMSE
-- Predicts RUL for individual engines
-- Classifies engines by maintenance priority
-- Generates maintenance schedules
-- Provides an interactive web dashboard
-- Includes an AI assistant powered by OpenRouter
-
----
-
-## Models
+| Model | Description |
+|---|---|
+| BiLSTM | Bidirectional Long Short-Term Memory network for sequential sensor data |
+| GRU + Attention | Recurrent neural network with an attention mechanism |
+| XGBoost | Gradient-boosted prediction using engineered features |
+| Ensemble | Average predictions from multiple models |
 
 ### BiLSTM
 
-The Bidirectional Long Short-Term Memory model processes sequential engine sensor data in both forward and backward directions.
+Processes sequential engine sensor observations using a bidirectional recurrent architecture.
 
 ### GRU with Attention
 
-The GRU model uses an attention mechanism to identify the most relevant time steps when predicting engine RUL.
+Uses a GRU network and attention mechanism to learn temporal patterns in engine degradation data.
 
 ### XGBoost
 
-XGBoost is used as a machine learning model for predicting RUL from engineered sequence features.
+Uses gradient-boosted decision trees for RUL prediction based on engineered input features.
 
-### Ensemble
+### Ensemble Learning
 
-The ensemble prediction combines the predictions from multiple models to improve prediction stability.
+Combines predictions from multiple models to provide an alternative prediction approach.
 
 ---
 
 ## Dataset
 
-This project uses the NASA C-MAPSS turbofan engine degradation datasets:
+**NASA C-MAPSS Turbofan Engine Degradation Simulation**
+
+The project supports four benchmark subsets:
 
 - FD001
 - FD002
 - FD003
 - FD004
 
-The raw dataset files are not included in this repository because of file-size limitations.
+The dataset contains simulated engine operating conditions, sensor measurements, and degradation sequences.
 
-Place the following files inside the `datasets/` folder before running the full training pipeline:
+Raw datasets are not included in this repository.
+
+Place the downloaded files inside the `datasets/` directory:
 
 ```text
 datasets/
@@ -88,17 +110,119 @@ datasets/
 ├── train_FD004.txt
 ├── test_FD004.txt
 └── RUL_FD004.txt
-````
+```
 
 ---
 
-## Project Structure
+## Model Evaluation
+
+Model performance is evaluated using:
+
+- **MAE:** Mean Absolute Error
+- **RMSE:** Root Mean Squared Error
+
+Both metrics are measured in remaining operating cycles. Lower values indicate better predictions.
+
+### Ensemble Test Results
+
+The following results are taken from the repository's saved test-split evaluation results.
+
+| Dataset | Model | MAE | RMSE |
+|---|---|---:|---:|
+| FD001 | Ensemble (Average) | 10.17 | 14.23 |
+| FD002 | Ensemble (Average) | 14.22 | 18.68 |
+| FD003 | Ensemble (Average) | 7.40 | 11.99 |
+| FD004 | Ensemble (Average) | 11.28 | 17.12 |
+
+Source: [Final Model Results](outputs/final_split_results_all_subsets.csv)
+
+These results represent test-split experiments rather than cross-validation averages.
+
+Additional model comparisons, validation results, and Group K-Fold summaries are available in the `outputs/` directory.
+
+---
+
+## Dashboard Features
+
+The interactive dashboard provides:
+
+- Fleet-level engine health visualization
+- Predicted remaining useful life
+- Actual RUL values from benchmark data
+- Identification of critical engines
+- Maintenance priority classification
+- Suggested maintenance actions
+- Maintenance planning by dataset
+- Interactive data filtering
+- AI-assisted questions about engine predictions
+
+### Maintenance Priority Levels
+
+| Predicted RUL | Dashboard Classification |
+|---|---|
+| 0–20 cycles | Immediate Check |
+| 21–50 cycles | Upcoming Service |
+| 51–90 cycles | Monitor |
+| More than 90 cycles | Healthy |
+
+These thresholds are project-defined and intended only for demonstration and decision-support purposes.
+
+---
+
+## AI Maintenance Assistant
+
+The dashboard includes an optional AI assistant integrated through the OpenRouter API.
+
+It can help users:
+
+- Identify engines requiring immediate attention
+- Understand current fleet health
+- Interpret predicted RUL values
+- Review maintenance priorities
+- Explore suggested maintenance plans
+
+The assistant uses available project information to support explanations and is not intended to replace engineering expertise.
+
+---
+
+## Technologies Used
+
+| Category | Technologies |
+|---|---|
+| Programming | Python, JavaScript |
+| Deep Learning | PyTorch, BiLSTM, GRU + Attention |
+| Machine Learning | XGBoost, Scikit-learn |
+| Data Processing | Pandas, NumPy |
+| Visualization | Matplotlib, Chart.js |
+| Web Development | Node.js, Express.js, HTML, CSS |
+| AI Integration | OpenRouter API |
+| Development Environment | Jupyter Notebook |
+
+---
+
+## Repository Structure
 
 ```text
 aircraft-engine-rul-prediction/
+│
 ├── datasets/
 │   └── README.md
+│
 ├── outputs/
+│   ├── final_all_results.csv
+│   ├── final_split_results_all_subsets.csv
+│   ├── final_kfold_results_all_subsets.csv
+│   ├── engine_predictions_FD001.csv
+│   ├── engine_predictions_FD002.csv
+│   ├── engine_predictions_FD003.csv
+│   ├── engine_predictions_FD004.csv
+│   └── ... additional results
+│
+├── screenshots/
+│   ├── engine-health-dashboard.png
+│   ├── maintenance-plan.png
+│   └── ai-assistant-demo.png
+│
 ├── rul_dashboard_web/
 │   ├── public/
 │   │   ├── index.html
@@ -109,11 +233,12 @@ aircraft-engine-rul-prediction/
 │   ├── package.json
 │   ├── package-lock.json
 │   └── start.cmd
+│
 ├── RUL_Prediction_Framework_FD001_FD004.ipynb
-├── aircraft_engine_rul_project_report.pdf
 ├── rul_prediction.py
 ├── generate_dashboard_data.py
 ├── combine_final_results.py
+├── aircraft_engine_rul_project_report.pdf
 ├── requirements.txt
 ├── .gitignore
 └── README.md
@@ -121,298 +246,125 @@ aircraft-engine-rul-prediction/
 
 ---
 
-## Python Requirements
+## Getting Started
 
-Install the required Python libraries using:
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/bandar-farhan/aircraft-engine-rul-prediction.git
+cd aircraft-engine-rul-prediction
+```
+
+### 2. Install Python Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-The project uses the following main libraries:
+### 3. Prepare the Dataset
 
-* NumPy
-* Pandas
-* Scikit-learn
-* PyTorch
-* XGBoost
-* Matplotlib
+Download NASA C-MAPSS FD001–FD004 data and place the files inside the `datasets/` directory.
 
----
-
-## Run the Prediction Pipeline
-
-To run the complete RUL prediction pipeline:
+### 4. Run the Prediction Pipeline
 
 ```bash
 python rul_prediction.py
 ```
 
-The pipeline performs the following steps:
+The training pipeline performs data preprocessing, sequence generation, model training, evaluation, and result export.
 
-1. Loads the C-MAPSS datasets
-2. Calculates RUL labels
-3. Preprocesses and scales sensor features
-4. Creates time-series sequences
-5. Trains the prediction models
-6. Evaluates model performance
-7. Saves model results to the `outputs/` folder
+Deep learning training may require significant computational resources.
 
-The full pipeline may take a long time to complete, especially when running deep learning models on a CPU.
-
----
-
-## Generate Dashboard Data
-
-After generating the model results, run:
+### 5. Generate Dashboard Data
 
 ```bash
 python generate_dashboard_data.py
 ```
 
-This script generates per-engine prediction files and maintenance planning outputs used by the web dashboard.
+This script generates engine-level predictions, maintenance priorities, and dashboard-ready outputs.
 
-Generated files may include:
+### 6. Run the Web Dashboard
 
-```text
-outputs/
-├── engine_predictions_FD001.csv
-├── engine_predictions_FD002.csv
-├── engine_predictions_FD003.csv
-├── engine_predictions_FD004.csv
-├── maintenance_priority_FD001.csv
-├── maintenance_priority_FD002.csv
-├── maintenance_priority_FD003.csv
-├── maintenance_priority_FD004.csv
-├── maintenance_schedule_FD001.csv
-├── maintenance_schedule_FD002.csv
-├── maintenance_schedule_FD003.csv
-└── maintenance_schedule_FD004.csv
-```
-
----
-
-## Combine Final Results
-
-To combine generated model result files:
-
-```bash
-python combine_final_results.py
-```
-
-This script combines available evaluation results into final summary files used for comparison and dashboard visualization.
-
----
-
-## Run the Web Dashboard
-
-Open a terminal inside the dashboard folder:
+Navigate to the dashboard directory:
 
 ```bash
 cd rul_dashboard_web
 ```
 
-Install the Node.js dependencies:
+Install Node.js dependencies:
 
 ```bash
 npm install
 ```
 
-Start the dashboard server:
+Start the server:
 
 ```bash
 npm start
 ```
 
-The dashboard will run at:
+Open the dashboard in your browser:
 
 ```text
 http://localhost:3000
 ```
 
-On Windows, the dashboard may also be started using:
-
-```text
-start.cmd
-```
+The repository includes saved prediction results for exploring the dashboard without retraining every model.
 
 ---
 
-## Environment Variables
+## Optional AI Assistant Configuration
 
-The AI assistant uses an OpenRouter API key.
-
-Create a file named `.env` inside the `rul_dashboard_web/` folder:
+To enable external AI functionality, create a `.env` file inside `rul_dashboard_web/`.
 
 ```env
 OPENROUTER=your_openrouter_api_key_here
 PORT=3000
 ```
 
-Do not upload the `.env` file to GitHub.
+A valid OpenRouter API key and internet connection are required for API-dependent features.
 
-An optional safe example file can be included as:
-
-```text
-.env.example
-```
-
-With the following content:
-
-```env
-OPENROUTER=your_openrouter_api_key_here
-PORT=3000
-```
+**Never upload API keys or `.env` files to GitHub.**
 
 ---
 
-## Dashboard Features
+## Project Documentation
 
-The dashboard includes:
+### Jupyter Notebook
 
-* Engine health overview
-* Predicted cycles remaining
-* Actual cycles remaining
-* Most critical engines
-* Maintenance priority classification
-* Recommended maintenance actions
-* Maintenance schedule generation
-* Fleet health visualizations
-* Dataset filtering
-* AI maintenance assistant
+The complete model development and experimentation notebook is available here:
 
----
+[View Jupyter Notebook](RUL_Prediction_Framework_FD001_FD004.ipynb)
 
-## Maintenance Priority Levels
+### Graduation Project Report
 
-The dashboard groups engines into the following maintenance categories:
+The full academic report includes the methodology, experiments, analysis, and project documentation.
 
-| Priority |       Predicted RUL | Dashboard Label  |
-| -------- | ------------------: | ---------------- |
-| Critical |   20 cycles or less | Immediate Check  |
-| High     |        21–50 cycles | Upcoming Service |
-| Medium   |        51–90 cycles | Monitor          |
-| Low      | More than 90 cycles | Healthy          |
+[View Project Report](aircraft_engine_rul_project_report.pdf)
 
-These classifications are designed as predictive maintenance decision-support indicators.
+### Model Results
 
-They are not certified aircraft safety instructions.
+Saved prediction results and performance metrics are available in:
+
+[View Results Directory](outputs/)
 
 ---
 
-## Evaluation Metrics
+## Project Limitations
 
-The models are evaluated using:
+- NASA C-MAPSS is a simulated benchmark dataset.
+- Predictions are not based on live aircraft telemetry.
+- Model performance varies by dataset and evaluation method.
+- Maintenance thresholds are illustrative rather than operational standards.
+- AI-generated explanations are supplementary to the prediction results.
 
-### Mean Absolute Error
-
-MAE measures the average absolute difference between the predicted RUL and the real RUL.
-
-Lower MAE values indicate better prediction performance.
-
-### Root Mean Squared Error
-
-RMSE gives greater weight to large prediction errors.
-
-Lower RMSE values indicate better model performance.
-
----
-
-## Validation Strategy
-
-The project uses engine-based data splitting to prevent time-series samples from the same engine from appearing in both training and testing data.
-
-It also uses Group K-Fold cross-validation, where the engine identifier is treated as the grouping variable.
-
-This approach provides a more reliable evaluation of model generalization across different engines.
-
----
-
-## Outputs
-
-The project generates:
-
-* Model evaluation results
-* MAE and RMSE comparisons
-* Group K-Fold summaries
-* Best-model summaries
-* Per-engine RUL predictions
-* Maintenance priorities
-* Recommended maintenance actions
-* Maintenance schedules
-* Dashboard-ready CSV files
-
----
-
-## Jupyter Notebook
-
-The complete notebook version of the prediction framework is available in:
-
-```text
-RUL_Prediction_Framework_FD001_FD004.ipynb
-```
-
-The notebook contains the project workflow, model training process, evaluation, and result comparison.
-
----
-
-## Project Report
-
-The full graduation project report is available in:
-
-```text
-aircraft_engine_rul_project_report.pdf
-```
-
----
-
-## Technologies Used
-
-### Machine Learning and Data Science
-
-* Python
-* NumPy
-* Pandas
-* Scikit-learn
-* PyTorch
-* XGBoost
-* Matplotlib
-
-### Web Dashboard
-
-* Node.js
-* Express.js
-* HTML
-* CSS
-* JavaScript
-* Chart.js
-
-### AI Assistant
-
-* OpenRouter API
-
----
-
-## Security Notes
-
-* Do not upload the `.env` file
-* Do not publish API keys
-* Do not upload `node_modules/`
-* Do not upload server log files
-* Do not upload trained model files unless required
-* Revoke and replace any API key that was accidentally committed
-
----
-
-## Disclaimer
-
-This project was developed for academic and research purposes.
-
-The maintenance recommendations produced by the system are predictive decision-support outputs and should not be treated as certified aviation maintenance instructions.
+This solution is intended for academic research, experimentation, and demonstration.
 
 ---
 
 ## Project Team
+
+This project was developed as a graduation project at the University of Jeddah.
 
 - Abdulaziz Alsaidalani
 - Omar Daffa
@@ -420,6 +372,14 @@ The maintenance recommendations produced by the system are predictive decision-s
 - Firas Matari
 - Bandar Farhan
 
-## Supervisor
+### Supervisor
 
-- Dr. Tariq Alsahfi
+Dr. Tariq Alsahfi
+
+---
+
+## Disclaimer
+
+This project is intended for academic and research purposes only.
+
+Predictions and maintenance recommendations should not be interpreted as certified aircraft maintenance decisions.
